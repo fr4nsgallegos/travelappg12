@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
@@ -15,14 +16,15 @@ class WelcomePage extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
-              GFCarousel(
-                height: 200,
+              CarouselSlider(
+                options: CarouselOptions(
+                  height: 200,
+                  autoPlay: true,
+                  enlargeCenterPage: true,
+                  autoPlayCurve: Curves.linear,
+                  enableInfiniteScroll: true,
+                ),
 
-                enlargeMainPage: true,
-                enableInfiniteScroll: true,
-                initialPage: 0,
-                hasPagination: true,
-                autoPlayAnimationDuration: Duration(seconds: 4),
                 items:
                     imagesList
                         .map(
@@ -40,6 +42,30 @@ class WelcomePage extends StatelessWidget {
                         )
                         .toList(),
               ),
+              // GFCarousel(
+              //   height: 200,
+              //   enlargeMainPage: true,
+              //   enableInfiniteScroll: true,
+              //   initialPage: 0,
+              //   hasPagination: true,
+              //   autoPlayAnimationDuration: Duration(seconds: 4),
+              //   items:
+              //       imagesList
+              //           .map(
+              //             (e) => Padding(
+              //               padding: const EdgeInsets.all(8.0),
+              //               child: ClipRRect(
+              //                 borderRadius: BorderRadius.circular(15),
+              //                 child: Image.network(
+              //                   e,
+              //                   fit: BoxFit.cover,
+              //                   width: double.infinity,
+              //                 ),
+              //               ),
+              //             ),
+              //           )
+              //           .toList(),
+              // ),
             ],
           ),
         ),
