@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomeWidget extends StatelessWidget {
   String title;
@@ -14,6 +15,11 @@ class WelcomeWidget extends StatelessWidget {
     required this.color,
     this.showButton = false,
   });
+
+  Future<void> setYaInicio() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    _prefs.setBool("yaInicio", true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +53,12 @@ class WelcomeWidget extends StatelessWidget {
           showButton
               ? Padding(
                 padding: const EdgeInsets.only(top: 40),
-                child: ElevatedButton(onPressed: () {}, child: Text("Vamos!")),
+                child: ElevatedButton(
+                  onPressed: () {
+                    setYaInicio();
+                  },
+                  child: Text("Vamos!"),
+                ),
               )
               : Container(),
         ],
