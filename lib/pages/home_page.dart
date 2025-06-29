@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travelappg12/widgets/card2_widget.dart';
 import 'package:travelappg12/widgets/destination_card_widget.dart';
 
@@ -8,6 +9,16 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          // Eliminar un dato en específico
+          SharedPreferences _prefs = await SharedPreferences.getInstance();
+          // _prefs.remove("yaInicio");
+
+          // Eliminar todos los datos
+          _prefs.clear();
+        },
+      ),
       drawer: Drawer(),
       appBar: AppBar(
         centerTitle: true,

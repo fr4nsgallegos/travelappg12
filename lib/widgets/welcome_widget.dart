@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:travelappg12/pages/home_page.dart';
 
 class WelcomeWidget extends StatelessWidget {
   String title;
@@ -56,6 +57,14 @@ class WelcomeWidget extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     setYaInicio();
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => HomePage()),
+                    // );
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
                   },
                   child: Text("Vamos!"),
                 ),

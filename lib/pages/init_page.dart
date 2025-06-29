@@ -16,10 +16,11 @@ class _InitPageState extends State<InitPage> {
     // showWelcome = _prefs.getBool("yaInicio") ?? true;
     if (_prefs.getBool("yaInicio") == true) {
       showWelcome = false;
+      setState(() {});
     } else {
       showWelcome = true;
+      setState(() {});
     }
-    setState(() {});
   }
 
   @override
