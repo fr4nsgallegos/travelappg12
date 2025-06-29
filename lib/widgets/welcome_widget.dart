@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:travelappg12/pages/home_page.dart';
 
 class WelcomeWidget extends StatelessWidget {
   String title;
@@ -61,10 +61,11 @@ class WelcomeWidget extends StatelessWidget {
                     //   context,
                     //   MaterialPageRoute(builder: (context) => HomePage()),
                     // );
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
-                    );
+                    // Navigator.pushReplacement(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => HomePage()),
+                    // );
+                    context.go("/home");
                   },
                   child: Text("Vamos!"),
                 ),

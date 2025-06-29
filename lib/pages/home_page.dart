@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:travelappg12/models/destination_model.dart';
 import 'package:travelappg12/widgets/card2_widget.dart';
 import 'package:travelappg12/widgets/destination_card_widget.dart';
 
@@ -53,17 +54,14 @@ class HomePage extends StatelessWidget {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: [
-                  DestinationCardWidget(),
-                  DestinationCardWidget(),
-                  DestinationCardWidget(),
-                ],
+                children:
+                    destinosList
+                        .map((destino) => DestinationCardWidget(destino))
+                        .toList(),
               ),
             ),
             SizedBox(height: 16),
-            Card2Widget(),
-            Card2Widget(),
-            Card2Widget(),
+            ...destinosList.map((destino) => Card2Widget(destino)),
           ],
         ),
       ),

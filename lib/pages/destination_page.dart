@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:travelappg12/models/destination_model.dart';
 
 class DestinationPage extends StatelessWidget {
-  const DestinationPage({super.key});
+  DestinationModel destinationModel;
+  DestinationPage(this.destinationModel, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +16,7 @@ class DestinationPage extends StatelessWidget {
             height: screenHeight / 3,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
-                  "https://images.pexels.com/photos/3538245/pexels-photo-3538245.jpeg?_gl=1*4o7u52*_ga*ODI4MzUxMDczLjE3MjI2NDc0MzI.*_ga_8JE65Q40S6*czE3NTExMjMxMjgkbzQ4JGcxJHQxNzUxMTIzMTU4JGozMCRsMCRoMA..",
-                ),
+                image: NetworkImage(destinationModel.urlImage),
                 fit: BoxFit.cover,
               ),
             ),

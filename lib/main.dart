@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:travelappg12/pages/destination_page.dart';
-import 'package:travelappg12/pages/home_page.dart';
-import 'package:travelappg12/pages/examples/carousel_page.dart';
-import 'package:travelappg12/pages/init_page.dart';
-import 'package:travelappg12/pages/welcome_page.dart';
+
+import 'package:travelappg12/utils/gorouterUtil.dart';
 
 void main() {
   runApp(
-    MaterialApp(home: DestinationPage(), debugShowCheckedModeBanner: false),
+    MaterialApp(
+      home: MaterialApp.router(routerConfig: goRouter),
+      debugShowCheckedModeBanner: false,
+    ),
+    //  DestinationPage(), debugShowCheckedModeBanner: false),
   );
 }
